@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
+console.log(chalk.bold.redBright("\n\tWELCOME\n\t"), chalk.italic.blueBright("\nNumber Guessing Game By HashirRaees\n"));
 const randomnumber = Math.floor(Math.random() * 5 + 1);
 const answer = await inquirer.prompt([
     {
@@ -9,8 +11,8 @@ const answer = await inquirer.prompt([
     }
 ]);
 if (answer.userguessednumber === randomnumber) {
-    console.log("Congratulations You Have Guessed Right Number ");
+    console.log(chalk.greenBright("Congratulations You Have Guessed The Right Number"));
 }
 else {
-    console.log("You have guessed wrong");
+    console.log(chalk.yellowBright("You have guessed wrong"));
 }
